@@ -14,7 +14,8 @@ export default defineType({
 			description:
 				"Denne tittelen vil vises i søkeresultatene. Den bør være mellom 50 og 60 tegn lang.",
 			validation: (Rule) =>
-				Rule.min(50)
+				Rule.required()
+					.min(50)
 					.max(60)
 					.warning("Title bør være mellom 50 og 60 tegn lang."),
 		},
@@ -25,7 +26,8 @@ export default defineType({
 			description:
 				"Denne beskrivelsen vil vises i søkeresultatene. Den bør være mellom 150 og 160 tegn lang.",
 			validation: (Rule) =>
-				Rule.min(150)
+				Rule.required()
+					.min(150)
 					.max(160)
 					.warning("Description bør være mellom 150 og 160 tegn lang."),
 		},
@@ -35,6 +37,7 @@ export default defineType({
 			type: "image",
 			description:
 				"Denne bildet vil vises i søkeresultatene når nettsiden din deles på sosiale medier.",
+			validation: (Rule) => Rule.required(),
 		},
 	],
 });
