@@ -33,12 +33,14 @@ export default defineType({
 			title: "Sections",
 			type: "pageSections",
 			group: ["content"],
+			validation: (Rule) => Rule.required(),
 		}),
 		defineField({
 			name: "seo",
 			title: "SEO",
 			type: "seoFields",
 			group: ["seo"],
+			validation: (Rule) => Rule.required(),
 		}),
 	],
 });
